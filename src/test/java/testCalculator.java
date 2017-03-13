@@ -3,7 +3,8 @@ import org.junit.Test;
 
 public class testCalculator {
 
-    @Test
+    @Test(timeout = 1000) // время в которое должен уложиться тест
+
     public void getSummTest() {
         calculator calc = new calculator();
         int actualSumm = calc.getSumm(4, 8);
