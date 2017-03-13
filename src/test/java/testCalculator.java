@@ -11,4 +11,11 @@ public class testCalculator {
 
         Assert.assertEquals("method getSumm is not valid", expectedSumm, actualSumm);
     }
+
+    @Test
+    public void getMinusTest() {
+        calculator calc = new calculator();
+
+        Assert.assertEquals("method getMinus is not valid", 4, calc.getMinus(8, 4));
+    }
 }
