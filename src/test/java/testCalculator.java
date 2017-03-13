@@ -17,8 +17,7 @@ public class testCalculator {
                 {5, 4, 9},
                 {3, 3, 6},
                 {7, 8, 15},
-                {7, 28, 35},
-                {71, 8, 79}
+
         };
         return Arrays.asList(data);
     }
