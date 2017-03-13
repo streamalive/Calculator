@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,13 +10,15 @@ import java.util.Collection;
 @RunWith(Parameterized.class) //указываем, что тест будет с таймаутом
 public class testCalculator {
 
-//отдельный мудреный метод
+    //отдельный мудреный метод
     @Parameterized.Parameters
     public static Collection dataSumm() {
         Object[][] data = new Object[][]{
                 {5, 4, 9},
                 {3, 3, 6},
-                {7, 8, 15}
+                {7, 8, 15},
+                {7, 28, 35},
+                {71, 8, 79}
         };
         return Arrays.asList(data);
     }
@@ -28,14 +31,19 @@ public class testCalculator {
         this.result = result;
     }
 
-// 2 простых метода
-    @Test(timeout = 10000) // время в которое должен уложиться тест
+    // 2 простых метода
+    @Test(timeout = 1000) // время в которое должен уложиться тест
     public void getSummTest() {
         calculator calc = new calculator();
         int actualSumm = calc.getSumm(x1, x2);
         int expectedSumm = result;
 
         Assert.assertEquals("method getSumm is not valid", expectedSumm, actualSumm);
+    }
+
+    @After
+    public void printMessage() {
+        System.out.println("test passed");
     }
 /*
     @Test
